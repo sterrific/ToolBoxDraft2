@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    let array =  [1, 3, 4, 7, 5]
+    let array =  ["Hi", "Sushi", "Go", "Bye", "Pen pinapple apple pen", "hungry", "doggo", "pizza", "ramen", "kombucha"]
     
 
     override func viewDidLoad() {
@@ -28,6 +28,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? myCell else{
             return  UITableViewCell()
         }
+        
+        
+        
+        cell.viewName.text = array[indexPath.row]
         return cell
         
         
@@ -42,9 +46,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 class myCell: UITableViewCell{
     
     
+    @IBOutlet weak var view: UIView!
     
+    @IBOutlet weak var viewName: UILabel!
     override func prepareForReuse() {
         
     }
+    
+    
 }
 
